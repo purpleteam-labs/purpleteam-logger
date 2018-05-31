@@ -1,4 +1,4 @@
-const winston = require('winston');
+const { createLogger, config, transports } = require('winston');
 const Joi = require('joi');
 
 const loggerSchema = {
@@ -21,12 +21,13 @@ const logger = () => {
 };
 
 
-const createLogger = () => {
-  loggerInstance = winston.createLogger({
-    levels: winston.config.syslog,
+const createPTLogger = () => {
+  debugger;
+  loggerInstance = createLogger({
+    levels: config.syslog,
     level: properties.level,
     transports: [
-      new winston.transports.Console()
+      new transports.Console({ level: 'info' })
     ]
   });
 
@@ -37,7 +38,7 @@ const createLogger = () => {
 const init = (options) => {
   if (loggerInstance) return loggerInstance;
   properties = validateOptions(options);
-  return createLogger();
+  return createPTLogger();
 };
 
 

@@ -1,15 +1,58 @@
 {
-  "name": "purpleteam-logger",
-  "version": "1.0.0",
-  "description": "A logger for purpleteam components",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint .",
-    "deps": "npm-check",
-    "update:deps": "npm-check -u",
-    "test": "echo \"Todo: Create tests.\" && exit 0",
-    "pretest": "npm run lint"
+  "_from": "git+ssh://git@github.com/binarymist/purpleteam-logger.git",
+  "_id": "purpleteam-logger@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/purpleteam-logger",
+  "_phantomChildren": {
+    "isemail": "3.1.2",
+    "topo": "3.0.0"
   },
+  "_requested": {
+    "type": "git",
+    "raw": "purpleteam-logger@git+ssh://git@github.com/binarymist/purpleteam-logger.git",
+    "name": "purpleteam-logger",
+    "escapedName": "purpleteam-logger",
+    "rawSpec": "git+ssh://git@github.com/binarymist/purpleteam-logger.git",
+    "saveSpec": "git+ssh://git@github.com/binarymist/purpleteam-logger.git",
+    "fetchSpec": "ssh://git@github.com/binarymist/purpleteam-logger.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+ssh://git@github.com/binarymist/purpleteam-logger.git#cae722dd7c9f863811e6bcc583e9c62230fd3e91",
+  "_spec": "purpleteam-logger@git+ssh://git@github.com/binarymist/purpleteam-logger.git",
+  "_where": "/home/kim/Source/purpleteam-app-scanner",
+  "author": {
+    "name": "Kim Carter"
+  },
+  "bugs": {
+    "url": "https://github.com/binarymist/purpleteam-logger/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "joi": "^13.3.0",
+    "winston": "^3.0.0-rc6"
+  },
+  "deprecated": false,
+  "description": "A logger for purpleteam components",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "npm-check": "^5.7.1",
+    "pre-commit": "^1.2.2"
+  },
+  "homepage": "https://github.com/binarymist/purpleteam-logger#readme",
+  "keywords": [
+    "logging",
+    "logger",
+    "log"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "purpleteam-logger",
   "pre-commit": [
     "test"
   ],
@@ -17,26 +60,12 @@
     "type": "git",
     "url": "git+ssh://git@github.com/binarymist/purpleteam-logger.git"
   },
-  "keywords": [
-    "logging",
-    "logger",
-    "log"
-  ],
-  "author": "Kim Carter",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/binarymist/purpleteam-logger/issues"
+  "scripts": {
+    "deps": "npm-check",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "echo \"Todo: Create tests.\" && exit 0",
+    "update:deps": "npm-check -u"
   },
-  "homepage": "https://github.com/binarymist/purpleteam-logger#readme",
-  "dependencies": {  
-    "joi": "^13.3.0",
-    "winston": "^2.4.2"
-  },
-  "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "npm-check": "^5.7.1",
-    "pre-commit": "^1.2.2"
-  }
+  "version": "1.0.0"
 }
