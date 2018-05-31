@@ -1,4 +1,7 @@
-const { createLogger, config, format, transports } = require('winston');
+const {
+  createLogger, config, format, transports
+} = require('winston');
+
 const { timestamp, printf } = format;
 const Joi = require('joi');
 
@@ -25,12 +28,14 @@ const logger = () => {
 // If sensitive values need to be removed or censored, look at adding a function to format https://github.com/winstonjs/winston#filtering-info-objects https://github.com/winstonjs/winston#creating-custom-formats
 //    One of the hapi good examples (https://github.com/hapijs/good/blob/master/examples/censoring-with-white-out.md) uses white-out, which looks good and simple (https://github.com/arb/white-out).
 
-const tagger = format( (info, opts) => {
-  if (info.tags) {
+const tagger = format((infoParam) => {
+  if (infoParam.tags) {
+    const info = infoParam;
     info.message = `[${info[Symbol.for('level')]},${info.tags}] ${info.message}`;
     delete info.tags;
+    return info;
   }
-  return info;
+  return infoParam;
 });
 
 
