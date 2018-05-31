@@ -4,8 +4,15 @@
   "description": "A logger for purpleteam components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "deps": "npm-check",
+    "update:deps": "npm-check -u",
+    "test": "echo \"Todo: Create tests.\" && exit 0",
+    "pretest": "npm run lint"
   },
+  "pre-commit": [
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/binarymist/purpleteam-logger.git"
@@ -26,10 +33,10 @@
     "winston": "^2.4.2"
   },
   "devDependencies": {
-  "eslint": "^4.19.1",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
     "npm-check": "^5.7.1",
-    "pre-commit": "^1.2.2",
+    "pre-commit": "^1.2.2"
   }
 }
