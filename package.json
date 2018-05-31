@@ -1,0 +1,35 @@
+{
+  "name": "purpleteam-logger",
+  "version": "1.0.0",
+  "description": "A logger for purpleteam components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/binarymist/purpleteam-logger.git"
+  },
+  "keywords": [
+    "logging",
+    "logger",
+    "log"
+  ],
+  "author": "Kim Carter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binarymist/purpleteam-logger/issues"
+  },
+  "homepage": "https://github.com/binarymist/purpleteam-logger#readme",
+  "dependencies": {  
+    "joi": "^13.3.0",
+    "winston": "^2.4.2"
+  },
+  "devDependencies": {
+  "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "npm-check": "^5.7.1",
+    "pre-commit": "^1.2.2",
+  }
+}
