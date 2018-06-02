@@ -31,7 +31,8 @@ const logger = () => {
 const tagger = format((infoParam) => {
   if (infoParam.tags) {
     const info = infoParam;
-    info.message = `[${info[Symbol.for('level')]},${info.tags}] ${info.message}`;
+    // info.message = `[${info[Symbol.for('level')]},${info.tags}] ${info.message}`;
+    info.message = `[${info.tags}] ${info.message}`;
     delete info.tags;
     return info;
   }
