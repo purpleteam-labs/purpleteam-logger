@@ -20,7 +20,7 @@ const validateOptions = (loggerOptions) => {
 
 
 const logger = () => {
-  if (!loggerInstance) throw new Error('You must call init(options) first.');
+  if (!loggerInstance) throw new Error('You must initialise the purpleteam-logger before using it. Call init(options) first.');
   return loggerInstance;
 };
 
