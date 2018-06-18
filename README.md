@@ -66,6 +66,8 @@ In `production`:
 
 ![production log output](../assets/prod.png?raw=true)
 
+The available log levels are listed [here](https://github.com/winstonjs/winston#logging-levels);
+
 ## API
 
 ### `init(options)`
