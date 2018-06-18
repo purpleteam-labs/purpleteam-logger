@@ -45,6 +45,27 @@ a [combined format](https://github.com/winstonjs/winston#combining-formats) (`fo
 * If `NODE_ENV` is `development`
   * `format.simple` instead of including a timestamp
 
+### Use the logger
+
+```
+log.info('Server registered.', {tags: ['startup']});
+log.info('Server started.', {tags: ['startup']});
+...
+log.info('running testJob', {tags: ['app']});
+...
+log.notice(`Constructing the cucumber world for session with id "${id}".\n`, {tags: ['world']});
+...
+log.notice(`Located element using id="${attackField.name}", and sent keys.`, {tags: ['browser']});
+...
+```
+In `development`:
+
+![development log output](../assets/dev.png?raw=true)
+
+In `production`:
+
+![production log output](../assets/prod.png?raw=true)
+
 ## API
 
 ### `init(options)`
