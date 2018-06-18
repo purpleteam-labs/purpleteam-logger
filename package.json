@@ -67,5 +67,5 @@
     "test": "echo \"Todo: Create tests.\" && exit 0",
     "update:deps": "npm-check -u"
   },
-  "version": "1.0.0"
+  "version": "0.1.0-alpha.1",
 }
