@@ -57,3 +57,9 @@ a [combined format](https://github.com/winstonjs/winston#combining-formats) (`fo
 Returns the already instantiated logger object, unless one hasn't been instantiated yet by `init`, in which case an `Error` is thrown.
 
 
+
+## License
+
+Copyright [Kim Carter](https://github.com/binarymist) and other contributors, Licensed under [MIT](./LICENSE).
+
+
