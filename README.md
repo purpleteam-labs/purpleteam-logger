@@ -102,11 +102,11 @@ log.debug('This is what a debug event looks like.', { tags: ['debug-tag'] });
 
 In `development`:
 
-![development log output](../assets/dev-SignaleTransport.png?raw=true)
+![development log output](../assets/dev-SignaleTransport.png)
 
 In `production`:
 
-![production log output](../assets/prod-SignaleTransport.png?raw=true)
+![production log output](../assets/prod-SignaleTransport.png)
 
 
 &nbsp;
