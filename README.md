@@ -2,7 +2,7 @@
 
 A logger that wraps [`winston`](https://github.com/winstonjs/winston) for purpleteam components.
 
-![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+![license](https://img.shields.io/badge/license-MIT-green.svg)
 
 ## Install
 
