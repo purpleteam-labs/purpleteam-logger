@@ -1,15 +1,16 @@
-const {
-  createLogger, config, format, transports
-} = require('winston');
-
-const { timestamp, printf } = format;
+const { createLogger, config, format, transports: winstonTransports } = require('winston');
+const customTransports = require('./transports');
 const Joi = require('joi');
+debugger;
+const { timestamp, printf } = format;
+
 
 const loggerSchema = {
-  level: Joi.string().valid(['emerg', 'alert', 'crit', 'error', 'warning', 'notice', 'info', 'debug'])
+  level: Joi.string().required().valid(['emerg', 'alert', 'crit', 'error', 'warning', 'notice', 'info', 'debug']),
+  transports: Joi.array().min(1).required().items(Joi.string())
 };
 
-let properties;
+const properties = {};
 let loggerInstance;
 
 const validateOptions = (loggerOptions) => {
@@ -57,9 +58,7 @@ const createPTLogger = () => {
       tagger(),
       format.simple()
     )),
-    transports: [
-      new transports.Console()
-    ]
+    transports: properties.transports
   });
 
   return loggerInstance;
@@ -68,7 +67,12 @@ const createPTLogger = () => {
 
 const init = (options) => {
   if (loggerInstance) return loggerInstance;
-  properties = validateOptions(options);
+  if (!options.transports) options.transports = ['Console'];
+  const validatedOptions = validateOptions(options);
+  const availableTransports = { ...winstonTransports, ...customTransports };
+  const selectedTransports = validatedOptions.transports.map(selected => new availableTransports[selected]());
+  properties.level = validatedOptions.level;
+  properties.transports = selectedTransports;
   return createPTLogger();
 };
 
@@ -77,3 +81,4 @@ module.exports = {
   init,
   logger
 };
+
