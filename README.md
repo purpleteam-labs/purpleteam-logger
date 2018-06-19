@@ -33,9 +33,9 @@ const log = require('purpleteam-logger').init({level: 'debug'});
 ```
 &nbsp;
 
-This will return an existing logger if one was already created.
+This will return an existing logger (with a default [`Console` transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#console-transport)) if one was already created.
 Otherwise a winston logger will be created.
-As part of creating a logger, the passed `options` will be validated that the `level` is one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels).
+As part of creating a logger, the passed `options` object will be validated that the `level` is one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels).
 
 a [combined format](https://github.com/winstonjs/winston#combining-formats) (`format.combine`) will be created. in which we:
 
@@ -62,6 +62,7 @@ log.notice(`Constructing the cucumber world for session with id "${id}".\n`, {ta
 log.notice(`Located element using id="${attackField.name}", and sent keys.`, {tags: ['browser']});
 ...
 ```
+
 In `development`:
 
 ![development log output](../assets/dev.png?raw=true)
@@ -72,11 +73,51 @@ In `production`:
 
 The available log levels are listed [here](https://github.com/winstonjs/winston#logging-levels);
 
+### Specify transport(s)
+
+By default the [`winston.transports.Console`](https://github.com/winstonjs/winston/blob/master/lib/winston/transports/console.js) will be used.
+
+```
+const log = require('purpleteam-logger').init({level: 'debug', transports: ['Console']});
+```
+You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), or the custom [`SignaleTransport`](https://github.com/binarymist/purpleteam-logger/src/transports/signale-transport.js).
+
+Using the `SignaleTransport` alone for example looks like the following:
+
+```
+const log = require('purpleteam-logger').init({level: 'debug', transports: ['SignaleTransport']});
+```
+### Use the logger
+
+```
+log.emerg('This is what an emergency looks like.', { tags: ['emerg-tag'] });
+log.alert('This is what an alert looks like.', { tags: ['alert-tag'] });
+log.crit('This is what a critical event looks like.', { tags: ['crit-tag'] });
+log.error('This is what an error looks like.', { tags: ['error-tag'] });
+log.warning('This is what a warning looks like.', { tags: ['warning-tag'] });
+log.notice('This is what a notice looks like.', { tags: ['notice-tag'] }); 
+log.info('This is what an info event looks like.', { tags: ['info-tag'] });
+log.debug('This is what a debug event looks like.', { tags: ['debug-tag'] });
+```
+
+In `development`:
+
+![development log output](../assets/dev-SignaleTransport.png?raw=true)
+
+In `production`:
+
+![production log output](../assets/prod-SignaleTransport.png?raw=true)
+
+
+&nbsp;
+
+
+
 ## API
 
 ### `init(options)`
 
-* `options`: Configuration options for the logger instance
+* `options`: Configuration object for the logger instance
   * `level`: Can be one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels): `'emerg'`, `'alert'`, `'crit'`, `'error'`, `'warning'`, `'notice'`, `'info'`, `'debug'`
 
 ### `logger()`
