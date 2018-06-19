@@ -85,7 +85,7 @@ Returns the already instantiated logger object, unless one hasn't been instantia
 
 ## Contribution
 
-Please open an issue to discus the proposed change before submitting a pull request.
+Please open an [issue](https://github.com/binarymist/purpleteam-logger/issues) to discus the proposed change before submitting a [pull request](https://github.com/binarymist/purpleteam-logger/pulls).
 
 ## License
 
