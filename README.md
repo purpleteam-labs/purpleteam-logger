@@ -31,6 +31,8 @@ Where ever you need a logger:
 ```
 const log = require('purpleteam-logger').init({level: 'debug'});
 ```
+&nbsp;
+
 This will return an existing logger if one was already created.
 Otherwise a winston logger will be created.
 As part of creating a logger, the passed `options` will be validated that the `level` is one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels).
@@ -44,6 +46,8 @@ a [combined format](https://github.com/winstonjs/winston#combining-formats) (`fo
   * Bespoke format the messages with a function (`prodFormatter`) that utilises [`winston.format.printf`]() to format the printed message as `timestamp` `level` `message` (`message` includes any tags from the `tagger`)
 * If `NODE_ENV` is `development`
   * `format.simple` instead of including a timestamp
+
+and finally a `winston.transport.console` transport is added to the `transports` array property of the options object used to create the logger. This could be made more extensible.
 
 ### Use the logger
 
@@ -79,7 +83,9 @@ The available log levels are listed [here](https://github.com/winstonjs/winston#
 
 Returns the already instantiated logger object, unless one hasn't been instantiated yet by `init`, in which case an `Error` is thrown.
 
+## Contribution
 
+Please open an issue to discus the proposed change before submitting a pull request.
 
 ## License
 
