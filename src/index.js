@@ -1,9 +1,10 @@
-const { createLogger, config, format, transports: winstonTransports } = require('winston');
+const {
+  createLogger, config, format, transports: winstonTransports
+} = require('winston');
 const customTransports = require('./transports');
 const Joi = require('joi');
-debugger;
-const { timestamp, printf } = format;
 
+const { timestamp, printf } = format;
 
 const loggerSchema = {
   level: Joi.string().required().valid(['emerg', 'alert', 'crit', 'error', 'warning', 'notice', 'info', 'debug']),
@@ -66,9 +67,10 @@ const createPTLogger = () => {
 
 
 const init = (options) => {
+  const unvalidatedOptions = options;
   if (loggerInstance) return loggerInstance;
-  if (!options.transports) options.transports = ['Console'];
-  const validatedOptions = validateOptions(options);
+  if (!options.transports) unvalidatedOptions.transports = ['Console'];
+  const validatedOptions = validateOptions(unvalidatedOptions);
   const availableTransports = { ...winstonTransports, ...customTransports };
   const selectedTransports = validatedOptions.transports.map(selected => new availableTransports[selected]());
   properties.level = validatedOptions.level;

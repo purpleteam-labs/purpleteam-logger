@@ -54,7 +54,7 @@
     "logger",
     "log"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "main": "./src",
   "name": "purpleteam-logger",
   "pre-commit": [
@@ -71,5 +71,5 @@
     "test": "echo \"Todo: Create tests.\" && exit 0",
     "update:deps": "npm-check -u"
   },
-  "version": "0.1.0-alpha.1"
+  "version": "0.1.0-alpha.2"
 }
