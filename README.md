@@ -80,7 +80,8 @@ By default the [`winston.transports.Console`](https://github.com/winstonjs/winst
 ```
 const log = require('purpleteam-logger').init({level: 'debug', transports: ['Console']});
 ```
-You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), or the custom [`SignaleTransport`](https://github.com/binarymist/purpleteam-logger/src/transports/signale-transport.js).
+
+You can specify the name of one or more transport constructor.
 
 Using the `SignaleTransport` alone for example looks like the following:
 
@@ -117,8 +118,11 @@ In `production`:
 
 ### `init(options)`
 
+Creates and returns a configured logger. If one already exists, it will be returned without creating another.
+
 * `options`: Configuration object for the logger instance
   * `level`: Can be one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels): `'emerg'`, `'alert'`, `'crit'`, `'error'`, `'warning'`, `'notice'`, `'info'`, `'debug'`
+  * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://github.com/binarymist/purpleteam-logger/tree/master/src/transports) will be automatically available for selection) [`SignaleTransport`](https://github.com/binarymist/purpleteam-logger/blob/master/src/transports/signale-transport.js).
 
 ### `logger()`
 
