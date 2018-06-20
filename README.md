@@ -1,6 +1,6 @@
 # purpleteam-logger
 
-A logger that wraps [`winston`](https://github.com/winstonjs/winston) for purpleteam components.
+A logger that wraps [`winston`](https://github.com/winstonjs/winston) for purpleteam components, provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
 
 ![license](https://img.shields.io/badge/license-MIT-green.svg)
 
@@ -81,9 +81,9 @@ By default the [`winston.transports.Console`](https://github.com/winstonjs/winst
 const log = require('purpleteam-logger').init({level: 'debug', transports: ['Console']});
 ```
 
-You can specify the name of one or more transport constructor.
+You can specify the name of one or more transport constructors.
 
-Using the `SignaleTransport` alone for example looks like the following:
+Using the [`SignaleTransport`](https://github.com/binarymist/purpleteam-logger/blob/master/src/transports/signale-transport.js) alone for example looks like the following:
 
 ```
 const log = require('purpleteam-logger').init({level: 'debug', transports: ['SignaleTransport']});
@@ -122,11 +122,21 @@ Creates and returns a configured logger. If one already exists, it will be retur
 
 * `options`: Configuration object for the logger instance
   * `level`: Can be one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels): `'emerg'`, `'alert'`, `'crit'`, `'error'`, `'warning'`, `'notice'`, `'info'`, `'debug'`
-  * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://github.com/binarymist/purpleteam-logger/tree/master/src/transports) will be automatically available for selection) [`SignaleTransport`](https://github.com/binarymist/purpleteam-logger/blob/master/src/transports/signale-transport.js).
+  * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://github.com/binarymist/purpleteam-logger/tree/master/src/transports) will be available for selection once added to the [`index.js`](https://github.com/binarymist/purpleteam-logger/blob/master/src/transports/index.js)) [`SignaleTransport`](https://github.com/binarymist/purpleteam-logger/blob/master/src/transports/signale-transport.js) for example
 
 ### `logger()`
 
 Returns the already instantiated logger object, unless one hasn't been instantiated yet by `init`, in which case an `Error` is thrown.
+
+## Custom transport details
+
+Currently `signale` is the only custom transport in the project, feel free to add additional transports.  
+The `signale` types can be seen at:
+
+* [docs](https://github.com/klauscfhq/signale#default-loggers)
+* [source](https://github.com/klauscfhq/signale/blob/master/types.js)
+
+Which utilise [figures](https://github.com/sindresorhus/figures/blob/master/index.js) for icons.
 
 ## Contribution
 
