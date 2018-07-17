@@ -2,7 +2,7 @@
 
 A logger that wraps [`winston`](https://github.com/winstonjs/winston) for purpleteam components, provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
 
-![license](https://img.shields.io/badge/license-MIT-green.svg)
+[![Build Status](https://api.travis-ci.org/binarymist/purpleteam-logger.png)](https://travis-ci.org/binarymist/purpleteam-logger) &nbsp; [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/binarymist/purpleteam-logger)
 
 ## Install
 
