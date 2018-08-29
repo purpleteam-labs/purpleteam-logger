@@ -65,7 +65,7 @@ log.notice(`Located element using id="${attackField.name}", and sent keys.`, {ta
 
 In `development`:
 
-![development log output](../tree/assets/dev.png?raw=true)
+![development log output](./tree/assets/dev.png?raw=true)
 
 In `production`:
 
