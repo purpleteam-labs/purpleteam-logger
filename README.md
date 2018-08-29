@@ -6,21 +6,8 @@ A logger that wraps [`winston`](https://github.com/winstonjs/winston) for purple
 
 ## Install
 
-Add the repository to your `package.json`:  
-
 ```
-"dependencies": {
-  ...
-  "purpleteam-logger": "git+ssh://gitlab.com/purpleteam-labs/purpleteam-logger.git",
-  ...
-}
-```
-Or add a specific version.
-
-Then from within your project directory, run:
-
-```
-npm install
+npm install purpleteam-logger
 ```
 ## Usage
 
