@@ -13,12 +13,12 @@ Logging component of purpleteam
    <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/master/pipeline.svg" alt="pipeline status">
 </a>
 
-<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/commits/master" title="test coverage">
-   <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/master/coverage.svg" alt="test coverage">
-</a>
-
 <a href="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json" title="known vulnerabilities">
   <img src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json" alt="known vulnerabilities"/>
+</a>
+
+<a href="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json" title="license">
+  <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/LICENSE" alt="license"/>
 </a>
 
 <br/><br/><br/>
