@@ -1,8 +1,31 @@
-# purpleteam-logger
+<div align="center">
+  <br/>
+  <a href="https://purpleteam-labs.com" title="purpleteam">
+    <img width=900px src="https://gitlab.com/purpleteam-labs/purpleteam/raw/master/assets/images/purpleteam-banner.png" alt="purpleteam logo">
+  </a>
+  <br/>
+<br/>
+<h2>purpleteam logger</h2><br/>
 
-A logger that wraps [`winston`](https://github.com/winstonjs/winston) for purpleteam components, provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
+<br/><br/>
 
-[![pipeline status](https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/master/pipeline.svg)](https://gitlab.com/purpleteam-labs/purpleteam/commits/master) &nbsp; [![known vulnerabilities](https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json)](https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json) &nbsp; [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/LICENSE)
+<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/commits/master" title="pipeline status">
+   <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/master/pipeline.svg" alt="pipeline status">
+</a>
+
+<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/commits/master" title="test coverage">
+   <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/master/coverage.svg" alt="test coverage">
+</a>
+
+<a href="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json" title="known vulnerabilities">
+  <img src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json" alt="known vulnerabilities"/>
+</a>
+
+<br/><br/><br/>
+</div>
+
+
+Purpleteam logger wraps [`winston`](https://github.com/winstonjs/winston) for [purpleteam components](https://gitlab.com/purpleteam-labs/), provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
 
 ## Install
 
