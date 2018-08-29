@@ -17,8 +17,8 @@ Logging component of purpleteam
   <img src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json" alt="known vulnerabilities"/>
 </a>
 
-<a href="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json" title="license">
-  <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/LICENSE" alt="license"/>
+<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/LICENSE" title="license">
+  <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="license"/>
 </a>
 
 <br/><br/><br/>
