@@ -2,7 +2,7 @@
 
 A logger that wraps [`winston`](https://github.com/winstonjs/winston) for purpleteam components, provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
 
-[![pipeline status](https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/master/pipeline.svg)](https://gitlab.com/purpleteam-labs/purpleteam/commits/master) &nbsp; [![known vulnerabilities](https://snyk.io/test/gitlab/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json)](https://snyk.io/test/gitlab/purpleteam-labs/purpleteam-logger?targetFile=package.json) &nbsp; [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/binarymist/purpleteam-logger)
+[![pipeline status](https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/master/pipeline.svg)](https://gitlab.com/purpleteam-labs/purpleteam/commits/master) &nbsp; [![known vulnerabilities](https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json)](https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json) &nbsp; [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/binarymist/purpleteam-logger)
 
 ## Install
 
