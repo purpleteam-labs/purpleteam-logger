@@ -65,11 +65,11 @@ log.notice(`Located element using id="${attackField.name}", and sent keys.`, {ta
 
 In `development`:
 
-![development log output](./tree/assets/dev.png?raw=true)
+![development log output](/uploads/4630d27f2ee00b2e54f9553e4c1fa915/dev.png)
 
 In `production`:
 
-![production log output](../assets/prod.png?raw=true)
+![production log output](/uploads/6aee40ce7207b6dfb50ff7dfd1205613/prod.png)
 
 The available log levels are listed [here](https://github.com/winstonjs/winston#logging-levels);
 
@@ -103,11 +103,11 @@ log.debug('This is what a debug event looks like.', { tags: ['debug-tag'] });
 
 In `development`:
 
-![development log output](../assets/dev-SignaleTransport.png)
+![development log output](/uploads/94fd458cf0ff8e5bd53c18cf1fc1f697/dev-SignaleTransport.png)
 
 In `production`:
 
-![production log output](../assets/prod-SignaleTransport.png)
+![production log output](/uploads/bbca2ce9d3a4073ef74d9c7a02c18208/prod-SignaleTransport.png)
 
 
 &nbsp;
