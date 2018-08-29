@@ -1,8 +1,6 @@
-const {
-  createLogger, config, format, transports: winstonTransports
-} = require('winston');
-const customTransports = require('./transports');
+const { createLogger, config, format, transports: winstonTransports } = require('winston');
 const Joi = require('joi');
+const customTransports = require('./transports');
 
 const { timestamp, printf } = format;
 
@@ -83,4 +81,3 @@ module.exports = {
   init,
   logger
 };
-

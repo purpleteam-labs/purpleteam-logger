@@ -38,11 +38,11 @@
   "description": "A logger for purpleteam components",
   "devDependencies": {
     "code": "^5.2.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.12.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "lab": "^16.0.0",
-    "npm-check": "^5.7.1",
+    "npm-check": "^5.8.0",
     "pre-commit": "^1.2.2",
     "rewire": "^4.0.1",
     "sinon": "^6.1.5"

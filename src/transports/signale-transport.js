@@ -46,4 +46,3 @@ module.exports = class SignaleTransport extends Transport {
     callback();
   }
 };
-
