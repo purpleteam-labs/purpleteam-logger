@@ -109,7 +109,7 @@ Creates and returns a configured logger. If one already exists, it will be retur
 
 * `options`: Configuration object for the logger instance
   * `level`: Can be one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels): `'emerg'`, `'alert'`, `'crit'`, `'error'`, `'warning'`, `'notice'`, `'info'`, `'debug'`
-  * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://gitlab.com/purpleteam-labs/purpleteam-logger/tree/master/src/transports) will be available for selection once added to the [`index.js`](https://github.com/binarymist/purpleteam-logger/blob/master/src/transports/index.js)), [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/src/transports/signale-transport.js) for example
+  * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://gitlab.com/purpleteam-labs/purpleteam-logger/tree/master/src/transports) will be available for selection once added to the [`index.js`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/src/transports/index.js)), [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/src/transports/signale-transport.js) for example
 
 ### `logger()`
 
@@ -131,6 +131,6 @@ Please open an [issue](https://gitlab.com/purpleteam-labs/purpleteam/issues) to 
 
 ## License
 
-Copyright [Kim Carter](https://gitlab.com/binarymist) and other contributors, Licensed under [MIT](./LICENSE).
+Copyright [Kim Carter](https://gitlab.com/binarymist) and other contributors, Licensed under [MIT](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/LICENSE).
 
 
