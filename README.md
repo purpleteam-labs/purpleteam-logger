@@ -6,7 +6,7 @@
   <br/>
 <br/>
 <h2>purpleteam logger</h2><br/>
-
+Logging component of purpleteam
 <br/><br/>
 
 <a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/commits/master" title="pipeline status">
