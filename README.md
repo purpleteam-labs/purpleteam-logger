@@ -2,7 +2,7 @@
 
 A logger that wraps [`winston`](https://github.com/winstonjs/winston) for purpleteam components, provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
 
-[![Build Status](https://api.travis-ci.org/binarymist/purpleteam-logger.png)](https://travis-ci.org/binarymist/purpleteam-logger) &nbsp; [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/binarymist/purpleteam-logger)
+[![pipeline status](https://gitlab.com/purpleteam-labs/purpleteam/badges/master/pipeline.svg)](https://gitlab.com/purpleteam-labs/purpleteam/commits/master) &nbsp; [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/binarymist/purpleteam-logger)
 
 ## Install
 
@@ -11,7 +11,7 @@ Add the repository to your `package.json`:
 ```
 "dependencies": {
   ...
-  "purpleteam-logger": "git+ssh://github.com/binarymist/purpleteam-logger.git",
+  "purpleteam-logger": "git+ssh://gitlab.com/purpleteam-labs/purpleteam-logger.git",
   ...
 }
 ```
@@ -83,7 +83,7 @@ const log = require('purpleteam-logger').init({level: 'debug', transports: ['Con
 
 You can specify the name of one or more transport constructors.
 
-Using the [`SignaleTransport`](https://github.com/binarymist/purpleteam-logger/blob/master/src/transports/signale-transport.js) alone for example looks like the following:
+Using the [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/src/transports/signale-transport.js) alone for example looks like the following:
 
 ```
 const log = require('purpleteam-logger').init({level: 'debug', transports: ['SignaleTransport']});
@@ -140,10 +140,10 @@ Which utilise [figures](https://github.com/sindresorhus/figures/blob/master/inde
 
 ## Contribution
 
-Please open an [issue](https://github.com/binarymist/purpleteam-logger/issues) to discus the proposed change before submitting a [pull request](https://github.com/binarymist/purpleteam-logger/pulls).
+Please open an [issue](https://gitlab.com/purpleteam-labs/purpleteam/issues) to discus the proposed change before submitting a [pull request](https://gitlab.com/purpleteam-labs/purpleteam/merge_requests).
 
 ## License
 
-Copyright [Kim Carter](https://github.com/binarymist) and other contributors, Licensed under [MIT](./LICENSE).
+Copyright [Kim Carter](https://gitlab.com/binarymist) and other contributors, Licensed under [MIT](./LICENSE).
 
 
