@@ -127,7 +127,7 @@ Which utilise [figures](https://github.com/sindresorhus/figures/blob/master/inde
 
 ## Contribution
 
-Please open an [issue](https://gitlab.com/purpleteam-labs/purpleteam/issues) to discus the proposed change before submitting a [pull request](https://gitlab.com/purpleteam-labs/purpleteam/merge_requests).
+Please open an [issue](https://gitlab.com/purpleteam-labs/purpleteam-logger/issues) to discus the proposed change before submitting a [merge request](https://gitlab.com/purpleteam-labs/purpleteam-logger/merge_requests).
 
 ## License
 
