@@ -149,8 +149,7 @@ If you supply an argument that is the name of a logger you have created previous
 
 ### `add(catagory, [options])`
 
-If no `options` are supplied to `add`, a new `options` object will be created using a transport of [`Console`](https://github.com/winstonjs/winston/blob/5758752f1a3f5b1bf71b750fc32771bdbd1366ce/docs/transports.md#console-transport)
-
+If no `options` are supplied to `add`, a new `options` object will be created using a transport of [`Console`](https://github.com/winstonjs/winston/blob/5758752f1a3f5b1bf71b750fc32771bdbd1366ce/docs/transports.md#console-transport), and the same `level` that the default logger has.
 
 ## Custom transport details
 
