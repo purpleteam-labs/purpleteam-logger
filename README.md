@@ -119,6 +119,13 @@ In `production`:
 
 ![production log output](/uploads/bbca2ce9d3a4073ef74d9c7a02c18208/prod-SignaleTransport.png)
 
+### Add more loggers
+
+If you want to add extra loggers after the default logger has been `init`ialised. See the [Winston docs](https://github.com/winstonjs/winston/tree/5758752f1a3f5b1bf71b750fc32771bdbd1366ce#working-with-multiple-loggers-in-winston) for more details.
+
+```
+const log = require('purpleteam-logger').add('nameForYourNewLogger', { transports: ['File'], filename: '/path/to/your/logfile' });
+```
 
 &nbsp;
 
@@ -134,9 +141,16 @@ Creates and returns a configured logger. If one already exists, it will be retur
   * `level`: Can be one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels): `'emerg'`, `'alert'`, `'crit'`, `'error'`, `'warning'`, `'notice'`, `'info'`, `'debug'`
   * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://gitlab.com/purpleteam-labs/purpleteam-logger/tree/master/src/transports) will be available for selection once added to the [`index.js`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/src/transports/index.js)), [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/src/transports/signale-transport.js) for example
 
-### `logger()`
+### `get(['default'])`
 
-Returns the already instantiated logger object, unless one hasn't been instantiated yet by `init`, in which case an `Error` is thrown.
+Returns the already instantiated logger object, unless one hasn't been instantiated yet by `init`, in which case an informative `Error` will be thrown.  
+If an argument of `'default'` or no argument is passed to `get`, the 'default' logger will be returned if it has been `init`ialised.  
+If you supply an argument that is the name of a logger you have created previously, then that logger will be returned to you.
+
+### `add(catagory, [options])`
+
+If no `options` are supplied to `add`, a new `options` object will be created using a transport of [`Console`](https://github.com/winstonjs/winston/blob/5758752f1a3f5b1bf71b750fc32771bdbd1366ce/docs/transports.md#console-transport)
+
 
 ## Custom transport details
 
