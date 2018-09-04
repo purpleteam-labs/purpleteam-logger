@@ -72,5 +72,5 @@
     "test:debug": "node --inspect-brk ./node_modules/.bin/lab --assert code --timeout 0",
     "update:deps": "npm-check -u"
   },
-  "version": "0.1.5"
+  "version": "1.0.0"
 }
