@@ -1,4 +1,6 @@
-const { createLogger, config, format, transports: winstonTransports } = require('winston');
+const winston = require('winston');
+
+const { createLogger, loggers, config, format, transports: winstonTransports } = winston;
 const Joi = require('joi');
 const customTransports = require('./transports');
 
@@ -10,7 +12,7 @@ const loggerSchema = {
 };
 
 const properties = {};
-let loggerInstance;
+let defaultLogger;
 
 const validateOptions = (loggerOptions) => {
   const result = Joi.validate(loggerOptions, loggerSchema);
@@ -19,8 +21,11 @@ const validateOptions = (loggerOptions) => {
 };
 
 
-const logger = () => {
-  if (!loggerInstance) throw new Error('You must initialise the purpleteam-logger before using it. Call init(options) first.');
+const get = (requested) => {
+  const instanceType = requested || 'default';
+  const loggerInstance = instanceType === 'default' ? defaultLogger : loggers.get(instanceType);
+  if (instanceType === 'default' && !loggerInstance) throw new Error('You must initialise the default purpleteam-logger before using it. Call init(options) first.');
+  if (!loggerInstance) throw new Error('You must call add("yourChosenLoggerName", options) before attempting to obtain the logger.');
   return loggerInstance;
 };
 
@@ -40,13 +45,14 @@ const tagger = format((infoParam) => {
 });
 
 
+const justTheMessageFormatter = format.printf(info => info.message);
+
+
 const prodFormatter = printf(info => `${info.timestamp} ${info.level}: ${info.message}`);
 
 
-const createPTLogger = () => {
-  loggerInstance = createLogger({
-    levels: config.syslog.levels,
-    level: properties.level,
+const createPTLogger = (loggerType) => {
+  const defaultOnlyOpts = {
     format: process.env.NODE_ENV === 'production' ? (format.combine(
       format.colorize(),
       tagger(),
@@ -57,27 +63,42 @@ const createPTLogger = () => {
       tagger(),
       format.simple()
     )),
-    transports: properties.transports
-  });
+    level: properties.level
+  };
+  const otherOpts = { transports: properties.transports, levels: config.syslog.levels, };
 
-  return loggerInstance;
+  if (loggerType === 'default') {
+    defaultLogger = createLogger({ ...defaultOnlyOpts, ...otherOpts });
+    return defaultLogger;
+  }
+  loggers.add(loggerType, { ...otherOpts, format: justTheMessageFormatter });
+  return loggers.get(loggerType);
 };
 
 
-const init = (options) => {
-  const unvalidatedOptions = options;
-  if (loggerInstance) return loggerInstance;
+const add = (catagory, options) => {
+  const loggerType = catagory || 'default';
+  if (loggerType === 'default' && !options) throw new Error('You must initialise the "default" purpleteam-logger with a valid options object. See the README for details.');
+  if (loggerType !== 'default' && !defaultLogger) throw new Error('A default logger must be created before any other logger. Do this by calling init(options)');
+  const unvalidatedOptions = options || {};
   if (!options.transports) unvalidatedOptions.transports = ['Console'];
-  const validatedOptions = validateOptions(unvalidatedOptions);
+  if (!options.level) unvalidatedOptions.level = defaultLogger.level;
+  const { level, transports } = unvalidatedOptions;
+  validateOptions({ level, transports });
   const availableTransports = { ...winstonTransports, ...customTransports };
-  const selectedTransports = validatedOptions.transports.map(selected => new availableTransports[selected]());
-  properties.level = validatedOptions.level;
+  const transportCreationOpts = { File: { filename: options.filename, level } /* Add transport opts as required */ };
+  const selectedTransports = transports.map(selected => new availableTransports[selected](transportCreationOpts[selected]));
+  properties.level = level;
   properties.transports = selectedTransports;
-  return createPTLogger();
+  return createPTLogger(loggerType);
 };
+
+
+const init = options => defaultLogger || add('default', options);
 
 
 module.exports = {
   init,
-  logger
+  add,
+  get
 };
