@@ -45,7 +45,7 @@
     "npm-check": "^5.8.0",
     "pre-commit": "^1.2.2",
     "rewire": "^4.0.1",
-    "sinon": "^6.1.5"
+    "sinon": "^7.3.0"
   },
   "homepage": "https://gitlab.com/purpleteam-labs/purpleteam-logger#readme",
   "keywords": [
