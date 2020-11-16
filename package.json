@@ -27,25 +27,25 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "figures": "^2.0.0",
-    "joi": "^14.3.1",
+    "figures": "^3.2.0",
+    "joi": "^17.3.0",
     "signale": "^1.4.0",
     "triple-beam": "^1.3.0",
-    "winston": "^3.2.1",
-    "winston-transport": "^4.3.0"
+    "winston": "^3.3.3",
+    "winston-transport": "^4.4.0"
   },
   "deprecated": false,
   "description": "A logger for purpleteam components",
   "devDependencies": {
-    "code": "^5.2.4",
-    "eslint": "^5.15.3",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "lab": "^18.0.2",
-    "npm-check": "^5.9.0",
+    "@hapi/code": "^8.0.2",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "@hapi/lab": "^24.1.0",
+    "npm-check": "^5.9.2",
     "pre-commit": "^1.2.2",
-    "rewire": "^4.0.1",
-    "sinon": "^7.3.0"
+    "rewire": "^5.0.0",
+    "sinon": "^9.2.1"
   },
   "homepage": "https://gitlab.com/purpleteam-labs/purpleteam-logger#readme",
   "keywords": [
@@ -68,8 +68,8 @@
     "deps": "npm-check",
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "lab --assert code --coverage",
-    "test:debug": "node --inspect-brk ./node_modules/.bin/lab --assert code --timeout 0",
+    "test": "lab --assert @hapi/code --coverage",
+    "test:debug": "node --inspect-brk ./node_modules/.bin/lab --assert @hapi/code --timeout 0",
     "update:deps": "npm-check -u"
   },
   "version": "1.0.1"

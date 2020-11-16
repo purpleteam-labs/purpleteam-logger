@@ -13,7 +13,9 @@ Logging component of purpleteam
    <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/master/pipeline.svg" alt="pipeline status">
 </a>
 
-<a href="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json"><img src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json" style="max-width:100%;"></a>
+<a href="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json">
+  <img src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json" style="max-width:100%;">
+</a>
 
 <a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/LICENSE" title="license">
   <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="license"/>

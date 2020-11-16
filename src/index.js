@@ -45,10 +45,10 @@ const tagger = format((infoParam) => {
 });
 
 
-const justTheMessageFormatter = format.printf(info => info.message);
+const justTheMessageFormatter = format.printf((info) => info.message);
 
 
-const prodFormatter = printf(info => `${info.timestamp} ${info.level}: ${info.message}`);
+const prodFormatter = printf((info) => `${info.timestamp} ${info.level}: ${info.message}`);
 
 
 const createPTLogger = (loggerType) => {
@@ -65,7 +65,7 @@ const createPTLogger = (loggerType) => {
     )),
     level: properties.level
   };
-  const otherOpts = { transports: properties.transports, levels: config.syslog.levels, };
+  const otherOpts = { transports: properties.transports, levels: config.syslog.levels };
 
   if (loggerType === 'default') {
     defaultLogger = createLogger({ ...defaultOnlyOpts, ...otherOpts });
@@ -87,14 +87,14 @@ const add = (catagory, options) => {
   validateOptions({ level, transports });
   const availableTransports = { ...winstonTransports, ...customTransports };
   const transportCreationOpts = { File: { filename: options.filename, level } /* Add transport opts as required */ };
-  const selectedTransports = transports.map(selected => new availableTransports[selected](transportCreationOpts[selected]));
+  const selectedTransports = transports.map((selected) => new availableTransports[selected](transportCreationOpts[selected]));
   properties.level = level;
   properties.transports = selectedTransports;
   return createPTLogger(loggerType);
 };
 
 
-const init = options => defaultLogger || add('default', options);
+const init = (options) => defaultLogger || add('default', options);
 
 
 module.exports = {

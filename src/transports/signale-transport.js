@@ -22,7 +22,7 @@ const signale = new Signale({
     notice: objectify(figures.hamburger, 'magentaBright', 'notice'),
     info: objectify(figures.info, 'blueBright', 'info'),
     debug: objectify(figures.play, 'cyanBright', 'debug')
-  },
+  }
 });
 
 
