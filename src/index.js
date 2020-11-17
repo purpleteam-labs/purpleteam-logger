@@ -7,7 +7,7 @@ const customTransports = require('./transports');
 const { timestamp, printf } = format;
 
 const loggerSchema = {
-  level: Joi.string().required().valid(['emerg', 'alert', 'crit', 'error', 'warning', 'notice', 'info', 'debug']),
+  level: Joi.string().required().valid('emerg', 'alert', 'crit', 'error', 'warning', 'notice', 'info', 'debug'),
   transports: Joi.array().min(1).required().items(Joi.string())
 };
 
