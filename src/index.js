@@ -6,16 +6,16 @@ const customTransports = require('./transports');
 
 const { timestamp, printf } = format;
 
-const loggerSchema = {
-  level: Joi.string().required(), // .valid('emerg', 'alert', 'crit', 'error', 'warning', 'notice', 'info', 'debug'),
+const loggerSchema = Joi.object({
+  level: Joi.string().required().valid('emerg', 'alert', 'crit', 'error', 'warning', 'notice', 'info', 'debug'),
   transports: Joi.array().min(1).required().items(Joi.string())
-};
+});
 
 const properties = {};
 let defaultLogger;
 
 const validateOptions = (loggerOptions) => {
-  const result = Joi.validate(loggerOptions, loggerSchema);
+  const result = loggerSchema.validate(loggerOptions);
   if (result.error) throw new Error(result.error.message);
   return result.value;
 };
