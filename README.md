@@ -1,7 +1,7 @@
 <div align="center">
   <br/>
   <a href="https://purpleteam-labs.com" title="purpleteam">
-    <img width=900px src="https://gitlab.com/purpleteam-labs/purpleteam/raw/master/assets/images/purpleteam-banner.png" alt="purpleteam logo">
+    <img width=900px src="https://gitlab.com/purpleteam-labs/purpleteam/raw/main/assets/images/purpleteam-banner.png" alt="purpleteam logo">
   </a>
   <br/>
 <br/>
@@ -9,15 +9,15 @@
 Logging component of purpleteam
 <br/><br/>
 
-<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/commits/master" title="pipeline status">
-   <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/master/pipeline.svg" alt="pipeline status">
+<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/commits/main" title="pipeline status">
+   <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/main/pipeline.svg" alt="pipeline status">
 </a>
 
 <a href="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json">
   <img src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json" style="max-width:100%;">
 </a>
 
-<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/LICENSE" title="license">
+<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE" title="license">
   <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="license"/>
 </a>
 
@@ -93,7 +93,7 @@ const log = require('purpleteam-logger').init({level: 'debug', transports: ['Con
 
 You can specify the name of one or more transport constructors.
 
-Using the [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/src/transports/signale-transport.js) alone for example looks like the following:
+Using the [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/signale-transport.js) alone for example looks like the following:
 
 ```
 const log = require('purpleteam-logger').init({level: 'debug', transports: ['SignaleTransport']});
@@ -139,7 +139,7 @@ Creates and returns a configured logger. If one already exists, it will be retur
 
 * `options`: Configuration object for the logger instance
   * `level`: Can be one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels): `'emerg'`, `'alert'`, `'crit'`, `'error'`, `'warning'`, `'notice'`, `'info'`, `'debug'`
-  * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://gitlab.com/purpleteam-labs/purpleteam-logger/tree/master/src/transports) will be available for selection once added to the [`index.js`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/src/transports/index.js)), [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/src/transports/signale-transport.js) for example
+  * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://gitlab.com/purpleteam-labs/purpleteam-logger/tree/main/src/transports) will be available for selection once added to the [`index.js`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/index.js)), [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/signale-transport.js) for example
 
 ### `get(['default'])`
 
@@ -167,6 +167,6 @@ Please open an [issue](https://gitlab.com/purpleteam-labs/purpleteam-logger/issu
 
 ## License
 
-Copyright [Kim Carter](https://gitlab.com/binarymist) and other contributors, Licensed under [MIT](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/master/LICENSE).
+Copyright [Kim Carter](https://gitlab.com/binarymist) and other contributors, Licensed under [MIT](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE).
 
 
