@@ -23,7 +23,7 @@
     "email": "services@binarymist.net"
   },
   "bugs": {
-    "url": "https://gitlab.com/purpleteam-labs/purpleteam-logger/issues"
+    "url": "https://gitlab.com/purpleteam-labs/purpleteam/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
