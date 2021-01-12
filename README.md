@@ -171,6 +171,6 @@ Please open an [issue](https://github.com/purpleteam-labs/purpleteam/issues) to 
 
 ## License
 
-Copyright [Kim Carter](https://gitlab.com/binarymist) and other contributors, Licensed under [MIT](https://github.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE).
+Copyright [Kim Carter](https://binarymist.io) and other contributors, Licensed under [MIT](https://github.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE).
 
 
