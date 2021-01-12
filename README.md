@@ -1,7 +1,7 @@
 <div align="center">
   <br/>
   <a href="https://purpleteam-labs.com" title="purpleteam">
-    <img width=900px src="https://gitlab.com/purpleteam-labs/purpleteam/raw/main/assets/images/purpleteam-banner.png" alt="purpleteam logo">
+    <img width=900px src="https://github.com/purpleteam-labs/purpleteam/blob/main/assets/images/purpleteam-banner.png" alt="purpleteam logo">
   </a>
   <br/>
 <br/>
@@ -9,23 +9,27 @@
 Logging component of <a href="https://purpleteam-labs.com/" title="purpleteam">purpleteam</a>
 <br/><br/>
 
-<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/commits/main" title="pipeline status">
-   <img src="https://gitlab.com/purpleteam-labs/purpleteam-logger/badges/main/pipeline.svg" alt="pipeline status">
-</a>
-
-<a href="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json">
-  <img src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json" style="max-width:100%;">
-</a>
-
-<a href="https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE" title="license">
+<a href="https://github.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE" title="license">
   <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="license"/>
+</a>
+
+<a href="https://github.com/purpleteam-labs/purpleteam-logger/commits/main" title="pipeline status">
+  <img src="https://github.com/purpleteam-labs/purpleteam-logger/workflows/Node.js%20CI/badge.svg" alt="pipeline status">
+</a>
+
+<a href='https://coveralls.io/github/purpleteam-labs/purpleteam-logger?branch=main'>
+  <img src='https://coveralls.io/repos/github/purpleteam-labs/purpleteam-logger/badge.svg?branch=main' alt='test coverage'>
+</a>
+
+<a href="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger?targetFile=package.json" title="known vulnerabilities">
+  <img src="https://snyk.io/test/github/purpleteam-labs/purpleteam-logger/badge.svg?targetFile=package.json" alt="known vulnerabilities"/>
 </a>
 
 <br/><br/><br/>
 </div>
 
 
-Purpleteam logger wraps [`winston`](https://github.com/winstonjs/winston) for [purpleteam components](https://gitlab.com/purpleteam-labs/), provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
+Purpleteam logger wraps [`winston`](https://github.com/winstonjs/winston) for [purpleteam components](https://github.com/purpleteam-labs/), provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
 
 ## Install
 
@@ -53,7 +57,7 @@ a [combined format](https://github.com/winstonjs/winston#combining-formats) (`fo
 * Create a [custom format](https://github.com/winstonjs/winston#creating-custom-formats) (called `tagger`) by passing the bespoke (`tagger`) `transform` which consumes any tags from the log event and formats them into the printed message, along with the event message
 * If `NODE_ENV` is `production` 
   * Include a `winston.format.timestamp`
-  * Bespoke format the messages with a function (`prodFormatter`) that utilises [`winston.format.printf`]() to format the printed message as `timestamp` `level` `message` (`message` includes any tags from the `tagger`)
+  * Bespoke format the messages with a function (`prodFormatter`) that utilises `winston.format.printf` to format the printed message as `timestamp` `level` `message` (`message` includes any tags from the `tagger`)
 * If `NODE_ENV` is `development`
   * `format.simple` instead of including a timestamp
 
@@ -75,11 +79,11 @@ log.notice(`Located element using id="${attackField.name}", and sent keys.`, {ta
 
 In `development`:
 
-![development log output](/uploads/4630d27f2ee00b2e54f9553e4c1fa915/dev.png)
+![development log output](https://user-images.githubusercontent.com/2862029/104266561-bdeb4d00-54f4-11eb-9f76-bb06cf00e74f.png)
 
 In `production`:
 
-![production log output](/uploads/6aee40ce7207b6dfb50ff7dfd1205613/prod.png)
+![production log output](https://user-images.githubusercontent.com/2862029/104266602-d22f4a00-54f4-11eb-8bf8-f840c98890c2.png)
 
 The available log levels are listed [here](https://github.com/winstonjs/winston#logging-levels);
 
@@ -93,7 +97,7 @@ const log = require('purpleteam-logger').init({level: 'debug', transports: ['Con
 
 You can specify the name of one or more transport constructors.
 
-Using the [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/signale-transport.js) alone for example looks like the following:
+Using the [`SignaleTransport`](https://github.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/signale-transport.js) alone for example looks like the following:
 
 ```
 const log = require('purpleteam-logger').init({level: 'debug', transports: ['SignaleTransport']});
@@ -113,11 +117,11 @@ log.debug('This is what a debug event looks like.', { tags: ['debug-tag'] });
 
 In `development`:
 
-![development log output](/uploads/94fd458cf0ff8e5bd53c18cf1fc1f697/dev-SignaleTransport.png)
+![development log output](https://user-images.githubusercontent.com/2862029/104266760-263a2e80-54f5-11eb-81e1-ce84ba93bf3b.png)
 
 In `production`:
 
-![production log output](/uploads/bbca2ce9d3a4073ef74d9c7a02c18208/prod-SignaleTransport.png)
+![production log output](https://user-images.githubusercontent.com/2862029/104266785-381bd180-54f5-11eb-98ac-ff82c45a46c1.png)
 
 ### Add more loggers
 
@@ -139,7 +143,7 @@ Creates and returns a configured logger. If one already exists, it will be retur
 
 * `options`: Configuration object for the logger instance
   * `level`: Can be one of the [`syslog` levels](https://github.com/winstonjs/winston#logging-levels): `'emerg'`, `'alert'`, `'crit'`, `'error'`, `'warning'`, `'notice'`, `'info'`, `'debug'`
-  * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://gitlab.com/purpleteam-labs/purpleteam-logger/tree/main/src/transports) will be available for selection once added to the [`index.js`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/index.js)), [`SignaleTransport`](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/signale-transport.js) for example
+  * `transports`: An array of strings of any of the names of transport constructors. You can specify multiple transports in the `transports` array. These can be any combination of the `winston` [core transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md#built-in-to-winston), and/or the custom transports (Any transport inside the [`src/transports/` directory](https://github.com/purpleteam-labs/purpleteam-logger/tree/main/src/transports) will be available for selection once added to the [`index.js`](https://github.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/index.js)), [`SignaleTransport`](https://github.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/signale-transport.js) for example
 
 ### `get(['default'])`
 
@@ -163,10 +167,10 @@ Which utilise [figures](https://github.com/sindresorhus/figures/blob/master/inde
 
 ## Contribution
 
-Please open an [issue](https://gitlab.com/purpleteam-labs/purpleteam-logger/issues) to discus the proposed change before submitting a [merge request](https://gitlab.com/purpleteam-labs/purpleteam-logger/merge_requests).
+Please open an [issue](https://github.com/purpleteam-labs/purpleteam/issues) to discus the proposed change before submitting a [pull request](https://github.com/purpleteam-labs/purpleteam-logger/pulls).
 
 ## License
 
-Copyright [Kim Carter](https://gitlab.com/binarymist) and other contributors, Licensed under [MIT](https://gitlab.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE).
+Copyright [Kim Carter](https://gitlab.com/binarymist) and other contributors, Licensed under [MIT](https://github.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE).
 
 

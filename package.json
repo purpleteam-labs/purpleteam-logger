@@ -1,5 +1,5 @@
 {
-  "_from": "git+ssh://git@gitlab.com/purpleteam-labs/purpleteam-logger.git",
+  "_from": "git+ssh://git@github.com/purpleteam-labs/purpleteam-logger.git",
   "_id": "purpleteam-logger@1.0.0",
   "_inBundle": false,
   "_integrity": "",
@@ -10,20 +10,20 @@
   },
   "_requested": {
     "type": "git",
-    "raw": "purpleteam-logger@git+ssh://git@gitlab.com/purpleteam-labs/purpleteam-logger.git",
+    "raw": "purpleteam-logger@git+ssh://git@github.com/purpleteam-labs/purpleteam-logger.git",
     "name": "purpleteam-logger",
     "escapedName": "purpleteam-logger",
-    "rawSpec": "git+ssh://git@gitlab.com/purpleteam-labs/purpleteam-logger.git",
-    "saveSpec": "git+ssh://git@gitlab.com/purpleteam-labs/purpleteam-logger.git",
-    "fetchSpec": "ssh://git@gitlab.com/purpleteam-labs/purpleteam-logger.git",
+    "rawSpec": "git+ssh://git@github.com/purpleteam-labs/purpleteam-logger.git",
+    "saveSpec": "git+ssh://git@github.com/purpleteam-labs/purpleteam-logger.git",
+    "fetchSpec": "ssh://git@github.com/purpleteam-labs/purpleteam-logger.git",
     "gitCommittish": null
   },
   "author": {
-    "name": "BinaryMist",
+    "name": "Kim Carter",
     "email": "services@binarymist.net"
   },
   "bugs": {
-    "url": "https://gitlab.com/purpleteam-labs/purpleteam/issues"
+    "url": "https://github.com/purpleteam-labs/purpleteam/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -35,7 +35,7 @@
     "winston-transport": "^4.4.0"
   },
   "deprecated": false,
-  "description": "A logger for purpleteam components",
+  "description": "Logging component for purpleteam",
   "devDependencies": {
     "@hapi/code": "^8.0.2",
     "eslint": "^7.13.0",
@@ -47,7 +47,7 @@
     "rewire": "^5.0.0",
     "sinon": "^9.2.1"
   },
-  "homepage": "https://gitlab.com/purpleteam-labs/purpleteam-logger#readme",
+  "homepage": "https://purpleteam-labs.com",
   "keywords": [
     "logging",
     "logger",
@@ -62,13 +62,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/purpleteam-labs/purpleteam-logger.git"
+    "url": "git+ssh://git@github.com/purpleteam-labs/purpleteam-logger.git"
   },
   "scripts": {
     "deps": "npm-check",
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "lab --assert @hapi/code --coverage",
+    "test:coveralls": "lab --assert @hapi/code --reporter lcov -o ./coverage/lcov.info",
+    "test:nolint": "lab --assert @hapi/code --coverage",
     "test:debug": "node --inspect-brk ./node_modules/.bin/lab --assert @hapi/code --timeout 0",
     "update:deps": "npm-check -u"
   },
