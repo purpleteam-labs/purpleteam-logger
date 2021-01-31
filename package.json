@@ -74,5 +74,5 @@
     "test:debug": "node --inspect-brk ./node_modules/.bin/lab --assert @hapi/code --timeout 0",
     "update:deps": "npm-check -u"
   },
-  "version": "1.0.2"
+  "version": "1.1.0"
 }
