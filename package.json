@@ -58,9 +58,6 @@
   "license": "MIT",
   "main": "./src",
   "name": "purpleteam-logger",
-  "pre-commit": [
-    "test"
-  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/purpleteam-labs/purpleteam-logger.git"
@@ -76,5 +73,8 @@
     "update:deps": "npm-check -u",
     "prepare": "husky install"
   },
-  "version": "1.1.0"
+  "version": "1.1.0",
+  "files": [
+    "./src/"
+  ]
 }

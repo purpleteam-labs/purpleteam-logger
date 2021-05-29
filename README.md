@@ -21,10 +21,6 @@ Logging component of <a href="https://purpleteam-labs.com/" title="purpleteam">p
   <img src='https://coveralls.io/repos/github/purpleteam-labs/purpleteam-logger/badge.svg?branch=main' alt='test coverage'>
 </a>
 
-<a href="https://github.com/purpleteam-labs/purpleteam-logger/releases" title="latest release">
-  <img src="https://img.shields.io/github/v/release/purpleteam-labs/purpleteam-logger?color=%23794fb8&include_prereleases" alt="GitHub release (latest SemVer including pre-releases)">
-</a>
-
 <br/><br/><br/>
 </div>
 
