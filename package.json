@@ -73,7 +73,7 @@
     "update:deps": "npm-check -u",
     "prepare": "husky install"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "files": [
     "./src/"
   ]
