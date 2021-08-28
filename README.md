@@ -6,7 +6,7 @@
   <br/>
 <br/>
 <h2>purpleteam logger</h2><br/>
-Logging component of <a href="https://purpleteam-labs.com/" title="purpleteam">purpleteam</a>
+Logging component of <a href="https://purpleteam-labs.com/" title="purpleteam"><em>PurpleTeam</em></a>
 <br/><br/>
 
 <a href="https://github.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE" title="license">
@@ -25,7 +25,7 @@ Logging component of <a href="https://purpleteam-labs.com/" title="purpleteam">p
 </div>
 
 
-Purpleteam logger wraps [`winston`](https://github.com/winstonjs/winston) for [purpleteam components](https://github.com/purpleteam-labs/), provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
+_PurpleTeam_ logger wraps [`winston`](https://github.com/winstonjs/winston) for [_PurpleTeam_ components](https://github.com/purpleteam-labs/), provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
 
 ## Install
 
