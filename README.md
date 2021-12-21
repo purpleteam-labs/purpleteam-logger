@@ -9,7 +9,7 @@
 Logging component of <a href="https://purpleteam-labs.com/" title="purpleteam"><em>PurpleTeam</em></a>
 <br/><br/>
 
-<a href="https://github.com/purpleteam-labs/purpleteam-logger/blob/main/LICENSE" title="license">
+<a href="https://github.com/purpleteam-labs/purpleteam-logger/blob/main/licenses/mit.md" title="license">
   <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="license"/>
 </a>
 
@@ -19,6 +19,10 @@ Logging component of <a href="https://purpleteam-labs.com/" title="purpleteam"><
 
 <a href='https://coveralls.io/github/purpleteam-labs/purpleteam-logger?branch=main'>
   <img src='https://coveralls.io/repos/github/purpleteam-labs/purpleteam-logger/badge.svg?branch=main' alt='test coverage'>
+</a>
+
+<a href="https://github.com/purpleteam-labs/purpleteam-logger/releases" title="latest release">
+  <img src="https://img.shields.io/github/v/release/purpleteam-labs/purpleteam-logger?color=%23794fb8&include_prereleases" alt="GitHub release (latest SemVer including pre-releases)">
 </a>
 
 <br/><br/><br/>
