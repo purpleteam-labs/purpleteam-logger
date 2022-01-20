@@ -16,17 +16,19 @@
 // Existing transports code: https://github.com/winstonjs/winston/tree/master/lib/winston/transports
 // Console transport was a good example for this: https://github.com/winstonjs/winston/blob/master/lib/winston/transports/console.js
 
-const Transport = require('winston-transport');
-const { Signale } = require('signale');
-const { LEVEL } = require('triple-beam');
-const figures = require('figures');
+import Transport from 'winston-transport';
+import signalePkg from 'signale';
+import { LEVEL } from 'triple-beam';
+import figures from 'figures';
+
+const { Signale } = signalePkg;
 
 const objectify = (badge, color, label) => ({ badge, color, label });
 
 const signale = new Signale({
   // Add other option properties as required: https://github.com/klauscfhq/signale#custom-loggers
   types: {
-    emerg: objectify(figures('⬤'), 'red', 'emergency'),
+    emerg: objectify(figures.circleFilled, 'red', 'emergency'),
     alert: objectify(figures.warning, 'redBright', 'alert'),
     crit: objectify(figures.cross, 'yellowBright', 'critical'),
     error: objectify(figures.circleCross, 'yellowBright', 'error'),
@@ -38,7 +40,7 @@ const signale = new Signale({
 });
 
 
-module.exports = class SignaleTransport extends Transport {
+class SignaleTransport extends Transport {
   // Constructor left as documentation.
   constructor(options) { // eslint-disable-line no-useless-constructor
     super(options);
@@ -57,4 +59,6 @@ module.exports = class SignaleTransport extends Transport {
     });
     callback();
   }
-};
+}
+
+export default { SignaleTransport };

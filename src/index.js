@@ -10,11 +10,11 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // MIT License for more details.
 
-const winston = require('winston');
+import winston from 'winston';
+import Joi from 'joi';
+import customTransports from './transports/index.js';
 
 const { createLogger, loggers, config, format, transports: winstonTransports } = winston;
-const Joi = require('joi');
-const customTransports = require('./transports');
 
 const { timestamp, printf } = format;
 
@@ -105,12 +105,7 @@ const add = (catagory, options) => {
   return createPTLogger(loggerType);
 };
 
-
 const init = (options) => defaultLogger || add('default', options);
 
-
-module.exports = {
-  init,
-  add,
-  get
-};
+export default { init, add, get };
+export { init, add, get };

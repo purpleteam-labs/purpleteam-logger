@@ -10,6 +10,6 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // MIT License for more details.
 
-const SignaleTransport = require('./signale-transport');
+import signaleTransportPkg from './signale-transport.js';
 
-module.exports = { SignaleTransport };
+export default { ...signaleTransportPkg };
