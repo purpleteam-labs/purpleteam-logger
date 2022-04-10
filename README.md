@@ -31,19 +31,42 @@ Logging component of <a href="https://purpleteam-labs.com/" title="purpleteam"><
 
 _PurpleTeam_ logger wraps [`winston`](https://github.com/winstonjs/winston) for [_PurpleTeam_ components](https://github.com/purpleteam-labs/), provides a custom [`signale`](https://github.com/klauscfhq/signale) transport, and is open to be extended with additional transports.
 
+purpleteam-logger is used heavily throughout most of the _PurpleTeam_ projects.
+
+# Contents
+
+* [Install](#install)
+* [Usage](#usage)
+  * [Create a Reusable Logger](#create-a-reusable-logger)
+  * [Use the Logger](#use-the-logger)
+  * [Specify Transports](#specify-transports)
+  * [Use the Logger](#use-the-logger-1)
+  * [Add more Loggers](#add-more-loggers)
+* [API](#api)
+  * [`init(options)`](#initoptions)
+  * [`get(['default'])`](#getdefault)
+  * [`add(catagory, [options])`](#addcatagory-options)
+  * [Custom Transport Details](#custom-transport-details)
+  * [Examples](#examples)
+  * [Contribution](#contribution)
+  * [License](#license)
+
+
 ## Install
 
-```
+```shell
 npm install purpleteam-logger
 ```
 ## Usage
 
-### Create a reusable logger
+### Create a Reusable Logger
 
 Where ever you need a logger:
 
-```
-const log = require('purpleteam-logger').init({level: 'debug'});
+```javascript
+import { init as initLogger } from 'purpleteam-logger';
+
+const log = initLogger({ level: 'debug' });
 ```
 &nbsp;
 
@@ -63,18 +86,18 @@ a [combined format](https://github.com/winstonjs/winston#combining-formats) (`fo
 
 and finally a `winston.transport.console` transport is added to the `transports` array property of the options object used to create the logger. This could be made more extensible.
 
-### Use the logger
+### Use the Logger
 
-```
+```javascript
 log.info('Server registered.', {tags: ['startup']});
 log.info('Server started.', {tags: ['startup']});
-...
+// ...
 log.info('running testJob', {tags: ['app']});
-...
+// ...
 log.notice(`Constructing the cucumber world for session with id "${id}".\n`, {tags: ['world']});
-...
+// ...
 log.notice(`Located element using id="${attackField.name}", and sent keys.`, {tags: ['browser']});
-...
+// ...
 ```
 
 In `development`:
@@ -87,24 +110,38 @@ In `production`:
 
 The available log levels are listed [here](https://github.com/winstonjs/winston#logging-levels);
 
-### Specify transport(s)
+### Specify Transport(s)
 
 By default the [`winston.transports.Console`](https://github.com/winstonjs/winston/blob/master/lib/winston/transports/console.js) will be used.
 
-```
-const log = require('purpleteam-logger').init({level: 'debug', transports: ['Console']});
+```javascript
+import { init as initLogger } from 'purpleteam-logger';
+
+const log = initLogger({ level: 'debug', transports: ['Console'] });
 ```
 
 You can specify the name of one or more transport constructors.
 
 Using the [`SignaleTransport`](https://github.com/purpleteam-labs/purpleteam-logger/blob/main/src/transports/signale-transport.js) alone for example looks like the following:
 
-```
-const log = require('purpleteam-logger').init({level: 'debug', transports: ['SignaleTransport']});
-```
-### Use the logger
+```javascript
+import { init as initLogger } from 'purpleteam-logger';
 
+const log = initLogger({ level: 'debug', transports: ['SignaleTransport'] });
 ```
+
+Using the `File` alone for example looks like the following:
+
+```javascript
+import { init as initLogger } from 'purpleteam-logger';
+
+const log = initLogger({ level: 'debug', transports: ['File'], filename: '/path/to/your/logfile' });
+```
+
+
+### Use the Logger
+
+```javascript
 log.emerg('This is what an emergency looks like.', { tags: ['emerg-tag'] });
 log.alert('This is what an alert looks like.', { tags: ['alert-tag'] });
 log.crit('This is what a critical event looks like.', { tags: ['crit-tag'] });
@@ -123,12 +160,16 @@ In `production`:
 
 ![production log output](https://user-images.githubusercontent.com/2862029/104266785-381bd180-54f5-11eb-98ac-ff82c45a46c1.png)
 
-### Add more loggers
+### Add more Loggers
 
 If you want to add extra loggers after the default logger has been `init`ialised. See the [Winston docs](https://github.com/winstonjs/winston/tree/5758752f1a3f5b1bf71b750fc32771bdbd1366ce#working-with-multiple-loggers-in-winston) for more details.
 
-```
-const log = require('purpleteam-logger').add('nameForYourNewLogger', { transports: ['File'], filename: '/path/to/your/logfile' });
+```javascript
+import { init as initLogger } from 'purpleteam-logger';
+
+const log = initLogger({ level: 'debug' });
+
+log.add('nameForYourNewLogger', { transports: ['File'], filename: '/path/to/your/logfile' })
 ```
 
 &nbsp;
@@ -155,7 +196,7 @@ If you supply an argument that is the name of a logger you have created previous
 
 If no `options` are supplied to `add`, a new `options` object will be created using a transport of [`Console`](https://github.com/winstonjs/winston/blob/5758752f1a3f5b1bf71b750fc32771bdbd1366ce/docs/transports.md#console-transport), and the same `level` that the default logger has.
 
-## Custom transport details
+## Custom Transport Details
 
 Currently `signale` is the only custom transport in the project, feel free to add additional transports.  
 The `signale` types can be seen at:
@@ -164,6 +205,17 @@ The `signale` types can be seen at:
 * [source](https://github.com/klauscfhq/signale/blob/master/types.js)
 
 Which utilise [figures](https://github.com/sindresorhus/figures/blob/master/index.js) for icons.
+
+## Examples
+
+There are many examples of how purpleteam-logger is being used in the [purpleteam-labs projects](https://github.com/purpleteam-labs) in both development and production environments. In particular the following projects would be a good place to start:
+
+* [purpleteam (the CLI)](https://github.com/purpleteam-labs/purpleteam)
+* [purpleteam-orchestrator](https://github.com/purpleteam-labs/purpleteam-orchestrator)
+* [purpleteam-app-scanner](https://github.com/purpleteam-labs/purpleteam-app-scanner)
+* [purpleteam-tls-scanner](https://github.com/purpleteam-labs/purpleteam-tls-scanner)
+
+There are also [videos](https://purpleteam-labs.com/videos/) of purpleteam-logger in action.
 
 ## Contribution
 
